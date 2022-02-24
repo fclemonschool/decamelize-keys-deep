@@ -25,7 +25,7 @@ decamelizeKeysDeep({unicornRainbow: {fooBar: 1}}, '-');
 
 ## API
 
-### decamelizeKeysDeep(input, [separator])
+### decamelizeKeysDeep2(input, [separator])
 
 #### input
 
