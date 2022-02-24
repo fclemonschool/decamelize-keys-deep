@@ -1,7 +1,8 @@
-var decamelize = require("decamelize");
-var mapObj = require("map-obj");
+import decamelize from "decamelize";
+import mapObj from "map-obj"
 
-module.exports = function decamelizeKeysDeep(obj, options) {
+
+const DecamelizeKeysDeep = (obj, options) => {
   // Any falsy, which includes `null` whose typeof is `object`.
   if (!obj) {
     return obj;
@@ -13,19 +14,21 @@ module.exports = function decamelizeKeysDeep(obj, options) {
   // Array, whose typeof is `object` too.
   if (Array.isArray(obj)) {
     return obj.map(function(element) {
-      return decamelizeKeysDeep(element, options);
+      return DecamelizeKeysDeep(element, options);
     });
   }
   // So, if this is still an `object`, we might be interested in it.
   if (typeof obj === "object") {
-    return mapObj(obj, function(key, value) {
-      var newKey = decamelize(key, options);
+    return mapObj(obj, (key, value) => {
+      const newKey = decamelize(key, options);
       if (key !== newKey && newKey in obj) {
         throw new Error("Decamelized key `" + newKey + "` would overwrite existing key of the given JSON object");
       }
-      return [newKey, decamelizeKeysDeep(value, options)];
+      return [newKey, DecamelizeKeysDeep(value, options)];
     });
   }
   // Something else like a String or Number.
   return obj;
 }
+
+export default DecamelizeKeysDeep

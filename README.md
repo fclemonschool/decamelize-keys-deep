@@ -1,4 +1,4 @@
-# decamelize-keys-deep
+# decamelize-keys-deep2
 
 > Deeply convert the camelized keys of an object into a lowercased one with a custom separator<br>
 > Example: `{unicornRainbow: {fooBar: 1}}` → `{unicorn_rainbow: {foo_bar: 1}}`
@@ -6,13 +6,15 @@
 ## Install
 
 ```
-$ npm install --save decamelize-keys-deep
+$ npm install --save decamelize-keys-deep2
+or
+$ yarn add decamelize-keys-deep2
 ```
 
 ## Usage
 
 ```js
-const decamelizeKeysDeep = require('decamelize-keys-deep');
+const decamelizeKeysDeep = require('decamelize-keys-deep2');
 
 decamelizeKeysDeep({unicornRainbow: {fooBar: 1}});
 //=> {unicorn_rainbow: {foo_bar: 1}}

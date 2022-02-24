@@ -1,12 +1,10 @@
-var expect = require("chai").expect;
-var decamelizeKeysDeep = require("../index");
+import {expect} from "chai";
+import decamelizeKeysDeep from '../index.js'
 
-describe("decamelizeKeysDeep", function() {
-  var extract;
-
-  it("should deeply decamelize the keys of a JSON object", function() {
-    var aDate = new Date(2016, 3, 15);
-    var json = {
+describe("decamelizeKeysDeep", () => {
+  it("should deeply decamelize the keys of a JSON object", () => {
+    const aDate = new Date(2016, 3, 15);
+    const json = {
       unicornRainbow: {
         fooBar: 1,
         aDate: aDate,
@@ -22,8 +20,8 @@ describe("decamelizeKeysDeep", function() {
     });
   });
 
-  it("should raise if decamelized key would overwrite existing key of the JSON object", function() {
-    var json = {unicornRainbow: {fooBar: 1, foo_bar: 2}};
+  it("should raise if decamelized key would overwrite existing key of the JSON object", () => {
+    let json = {unicornRainbow: {fooBar: 1, foo_bar: 2}};
     expect(function() {
       decamelizeKeysDeep(json);
     }).to.throw();

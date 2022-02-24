@@ -1,12 +1,13 @@
 {
-  "name": "decamelize-keys-deep",
-  "version": "0.1.1",
+  "name": "decamelize-keys-deep2",
+  "version": "0.0.1",
   "description": "Deeply convert the camelized keys of an object into a lowercased one with a custom separator: unicornRainbow → unicorn_rainbow",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
-  "repository": "rxaviers/decamelize-keys-deep",
+  "type": "module",
+  "repository": "fclemonschool/decamelize-keys-deep2",
   "keywords": [
     "map",
     "obj",
@@ -31,17 +32,17 @@
     "deep",
     "recursive"
   ],
-  "author": "Rafael Xavier de Souza <rxaviers@gmail.com>",
+  "author": "Rafael Xavier de Souza <rxaviers@gmail.com>, Minchul Joh <fclemonschool@gmail.com>",
   "license": "MIT",
   "files": [
     "index.js"
   ],
   "dependencies": {
-    "decamelize": "^1.2.0",
-    "map-obj": "^1.0.1"
+    "decamelize": "^6.0.0",
+    "map-obj": "^5.0.0"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+    "chai": "^4.3.6",
+    "mocha": "^9.2.1"
   }
 }
